@@ -1,3 +1,6 @@
 item;quantity;location
-Coke;22;F1
-Fanta;10;F1
+Coke;22;Fridge1
+Fanta;10;Fridge1
+Expresso;35;Coffee
+Ristretto;42;Coffee
+Tuborg; 12; Fridge1
