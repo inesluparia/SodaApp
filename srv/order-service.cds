@@ -1,5 +1,6 @@
 using { sodaApp as schema } from '../db/schema';
 
 service OrderService @(path:'/orders'){
-    action placeOrder ( item: String, quantity: Integer)
+    entity Order as projection on schema.Orders;
+    //action placeOrder ( item: String, quantity: Integer)
 }
