@@ -10,5 +10,21 @@
     <h1>Hello please choose your location</h1>
     <button><a href="/beverages">Beverages</a></button>
     <button><a href="/coffee">Coffee</a></button>
+    <ul id="items-list"></ul>
 </body>
+
+<script>
+    fetch("http://localhost:4004/api/Fridge_1_Inventory")
+    .then(res => res.json())
+    .then(body => {
+        inventory = body.value
+        inventory.forEach( row => {
+            const name = row.item
+            const li = document.createElement('li')
+            li.innerHTML = name
+            document.getElementById('items-list').appendChild(li)
+        })
+    })
+</script>
+
 </html>

@@ -1,0 +1,11 @@
+###
+GET http://localhost:4004/api/All_Orders
+
+###
+POST http://localhost:4004/orders/placeOrder
+Content-Type: application/json
+
+{
+    "item":"Coke",
+    "quantity": 1
+}

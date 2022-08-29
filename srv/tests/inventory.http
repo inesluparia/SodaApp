@@ -1,0 +1,17 @@
+
+###
+GET http://localhost:4004/api/All_Inventory
+
+###
+GET http://localhost:4004/api/Coffee_Inventory
+
+###
+GET http://localhost:4004/api/Fridge_1_Inventory
+
+###
+PATCH http://localhost:4004/inv/Inventory/fe38c3b8-859d-4218-8fd6-c451998cde90
+Content-Type: application/json
+{
+    "quantity" : 10
+}
+

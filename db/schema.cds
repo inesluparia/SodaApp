@@ -1,23 +1,22 @@
-using { Currency, managed, sap, cuid } from '@sap/cds/common';
+using { managed, sap, cuid } from '@sap/cds/common';
 namespace sodaApp;
 
-entity Inventory {
-    // item : Association to Items;
-    key item : Beverages;
-    quantity : Integer;
-    location : Location;
-}
-
-type Beverages : String enum {
-    Coke ; Fanta ; Expresso; Ristretto; Tuborg; Tuborg_light;
+type Items : String enum {
+  Coke; Light_Coke; Tuborg; Tuborg_Nul; Fanta; Danskvand; Sprite; Expresso; Ristretto; Lungo
 }
 
 type Location : String enum {
     Coffee; Fridge1; Fridge2
 }
 
+entity Inventory : cuid {
+    item: Items;
+    quantity: Integer;
+    location: Location;
+}
+
 entity Orders : managed, cuid {
-    item : Beverages;
+    item : Items;
     quantity : Integer;
 } 
 
@@ -36,7 +35,21 @@ entity Orders : managed, cuid {
 
 
 // entity Items {
-//     key ID : Integer;
-//     name   : String(111);
-//     price : Decimal;
+//     key ID: Integer;
+//     name: String(30);
+//     price: Decimal;
+//     image: String(111);
 // }
+
+
+// entity Inventory {
+//     key ID : UUID;
+//     item_ID: Association to one Items;
+//     quantity: Integer;
+//     location: Location;
+// }
+
+// entity Orders : managed, cuid {
+//     item : Association to one Items;
+//     quantity : Integer;
+// } 
